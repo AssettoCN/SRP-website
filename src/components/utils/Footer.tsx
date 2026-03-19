@@ -25,8 +25,15 @@ export const Footer = () => (
                 <FooterIconItem icon={faFacebook} href="https://www.facebook.com/ShutokoRevivalProject/" />
                 <FooterIconItem icon={faDiscord} href="https://discord.gg/shutokorevivalproject" />
                 <FooterIconItem icon={faYoutube} href="https://www.youtube.com/@ShutokoRevivalProject" />
-                <a href="https://space.bilibili.com/" target="_blank" rel="noreferrer">
-                    <Image className="hover:text-blue-light transition" src="/svg/bilibiliLogo.svg" width={20} height={20} alt="Bilibili" />
+                <a href="https://space.bilibili.com/" target="_blank" rel="noreferrer" className="inline-block">
+                    <Image
+                        className="transition"
+                        src="/svg/bilibiliLogo.svg"
+                        width={20}
+                        height={20}
+                        alt="Bilibili"
+                        style={{ filter: 'brightness(0) invert(1)' }}
+                    />
                 </a>
             </div>
 
