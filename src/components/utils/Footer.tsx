@@ -33,7 +33,7 @@ export const Footer = () => (
                     target="_blank"
                     rel="noreferrer"
                 >
-                    Source Code
+                    源代码
                 </a>
                 {/* <span className="hover:underline cursor-pointer">
                     <Link href="/tos">
@@ -47,11 +47,14 @@ export const Footer = () => (
                 </span> */}
             </div>
 
-            <em className="text-center text-teal-100">&copy; 2025 Shutoko Revival Project</em>
+            <em className="text-center text-teal-100">&copy; 2026 Shutoko Revival Project & AssettoCN</em>
             <em className="text-center text-teal-100">
-                Background video by&nbsp;
+                背景视频由&nbsp;
                 <a className="hover:underline" href="https://www.youtube.com/@osaxosa">OSA X</a>
+                &nbsp;制作
             </em>
+            <em className="text-center text-teal-100">网站基于SRP原始官网构建</em>
+
         </Container>
     </footer>
 );

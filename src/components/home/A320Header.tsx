@@ -18,14 +18,14 @@ export const A320Header = () => (
             <div className="absolute bottom-0 left-0 h-2/3 px-page">
                 <Image src="/svg/srp-logo-text-gradient.svg" width="500" height="160" alt="SRP Logo" />
                 <p className="pt-5 max-w-xl">
-                    The definitive version of Shutoko, otherwise known as Tokyo Metropolitan Expressway.
+                    首都高速的终极版本，又称东京首都高速道路。
                     <br />
-                    Exclusively for Assetto Corsa.
+                    神力科莎专属赛道模组。
                 </p>
                 <div className="flex gap-4 my-5 max-w-md">
                     <Link href="#download">
                         <Button className="w-40 hover:text-blue-light bg-blue-light hover:bg-white border-2 border-blue-light">
-                            Download
+                            下载
                         </Button>
                     </Link>
 

@@ -8,6 +8,29 @@ import GameServer from './GameServer';
 
 const STATISTICS_ENDPOINT = 'https://api.shutokorevivalproject.com/Statistics';
 
+const regionNames: Record<string, string> = {
+    'Asia': '亚洲',
+    'Europe': '欧洲',
+    'US East': '美国东部',
+    'China': '中国',
+};
+
+const chinaMockServers: ServerInfo[] = [
+    { address: '127.0.0.1', name: '中国 1 - 无车流', port: 9221, clients: 0, maxClients: 32 },
+    { address: '127.0.0.1', name: '中国 2 - 车流', port: 9222, clients: 0, maxClients: 32 },
+    { address: '127.0.0.1', name: '中国 3 - 车流 - 街车', port: 9223, clients: 0, maxClients: 32 },
+];
+
+const translateServerName = (name: string) => name
+    .replace(/No Traffic/g, '无车流')
+    .replace(/Traffic - Street Cars/g, '车流 - 街车')
+    .replace(/Traffic - Event Server/g, '车流 - 活动服')
+    .replace(/Traffic/g, '车流')
+    .replace(/PTB/g, '测试服')
+    .replace(/^Asia /, '亚洲 ')
+    .replace(/^EU /, '欧洲 ')
+    .replace(/^US /, '美东 ');
+
 const Statistic = (props: {statCount: string, statName: string}) => (
     <div id={props.statName}>
         <h1 className="text-5xl font-bold text-blue-dark-contrast">{props.statCount}</h1>
@@ -33,7 +56,7 @@ export const Community = () => {
     const [playerCount, setPlayerCount] = useState(0);
     const [serverCount, setServerCount] = useState(0);
     const [servers, setServers] = useState<{[region: string]: ServerInfo[]}>({});
-    const [selectedRegion, setSelectedRegion] = useState('');
+    const [selectedRegion, setSelectedRegion] = useState('China');
 
     useEffect(() => {
         fetch(STATISTICS_ENDPOINT)
@@ -41,20 +64,11 @@ export const Community = () => {
             .then((res : StatisticsResponse) => {
                 setPlayerCount(res.numPlayers);
                 setServerCount(res.numServers);
-                setServers(res.servers);
+                setServers({ 'China': chinaMockServers, ...res.servers });
 
                 if (selectedRegion === '') {
-                    let highestRegion = Object.keys(res.servers)[0];
-                    let highestCount = 0;
-                    for (const region of Object.keys(res.servers)) {
-                        const count = res.servers[region].map((s) => s.clients).reduce((acc, clients) => acc + clients);
-                        if (count > highestCount) {
-                            highestRegion = region;
-                            highestCount = count;
-                        }
-                    }
-
-                    setSelectedRegion(highestRegion);
+                    const allServers = { 'China': chinaMockServers, ...res.servers };
+                    setSelectedRegion(Object.keys(allServers)[0]);
                 }
             })
             .catch((err) => console.log(err));
@@ -68,15 +82,15 @@ export const Community = () => {
         <section id="community" className="flex flex-col justify-between items-stretch text-blue-dark-contrast bg-gray-50 lg:flex-row">
             <Container className="flex flex-col py-12 max-w-6xl lg:px-24">
                 <span className="mb-3 w-24 h-2 bg-blue-light rounded-full" />
-                <h1>Community Insights</h1>
+                <h1>社区概览</h1>
                 <p className="max-w-prose text-gray-800">
-                    Shutoko Revival Project is the most popular track mod for Assetto Corsa.
+                    首都高复兴计划(SRP)是神力科莎上最受欢迎的地图模组。
                 </p>
 
                 <div className="grid grid-cols-2 gap-y-8 my-6 sm:grid-cols-4">
-                    <Statistic statCount={playerCount.toString()} statName="Drivers Online" />
-                    <Statistic statCount={serverCount.toString()} statName="Servers" />
-                    <Statistic statCount="700k+" statName="Discord Members" />
+                    <Statistic statCount={playerCount.toString()} statName="在线玩家" />
+                    <Statistic statCount={serverCount.toString()} statName="服务器" />
+                    <Statistic statCount="700k+" statName="Discord 成员" />
                 </div>
 
                 <div className="my-8">
@@ -88,7 +102,7 @@ export const Community = () => {
                             Discord
                         </CardTitle>
                         <CardBody>
-                            Our Discord server is the place where you can join us for chatting, progress reports and events. Having trouble? The community is here to help!
+                            我们的 Discord 服务器是您与我们交流、获取进度报告和参与活动的平台。遇到问题？社区随时为您提供帮助！
                         </CardBody>
 
                         <a
@@ -97,7 +111,7 @@ export const Community = () => {
                             target="_blank"
                             rel="noreferrer"
                         >
-                            Join the Community&nbsp;
+                            加入社区&nbsp;
                             <FontAwesomeIcon icon={faArrowRight} />
                         </a>
                     </Card>
@@ -105,10 +119,10 @@ export const Community = () => {
             </Container>
             <div className="flex flex-col divide-y divide-gray-500 lg:w-2/5 m-12">
                 <div className="pt-16 pb-8 lg:pt-0">
-                    <span className="text-4xl text-blue-light">Official Servers</span>
+                    <span className="text-4xl text-blue-light">官方服务器</span>
 
                     <p className="mt-4 mb-6 max-w-prose">
-                        Servers hosted by the Shutoko Revival Project Team, focused on Street Racing.
+                        由SRP团队托管的服务器，专注于街头竞速。
                     </p>
 
                     <div className="text-sm font-medium text-center text-gray-500 border-gray-200">
@@ -121,7 +135,7 @@ export const Community = () => {
 
                                 return (
                                     <li className="mr-2 text-xl font-semibold">
-                                        <button type="button" onClick={onRegionClicked} value={server} className={classes}>{server}</button>
+                                        <button type="button" onClick={onRegionClicked} value={server} className={classes}>{regionNames[server] ?? server}</button>
                                     </li>
                                 );
                             })}
@@ -131,7 +145,7 @@ export const Community = () => {
                     <div className="divide-y divide-gray-400">
                         {servers[selectedRegion]?.map((server) => (
                             <GameServer
-                                name={server.name}
+                                name={selectedRegion === 'China' ? server.name : translateServerName(server.name)}
                                 clients={server.clients}
                                 maxClients={server.maxClients}
                                 link={`acmanager://race/online/join?query=race/online/join&ip=${server.address}&httpPort=${server.port}`}

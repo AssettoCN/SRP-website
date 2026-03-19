@@ -3,11 +3,11 @@ const Custom404 = () => (
         <div className="flex flex-col justify-center mx-auto max-w-md min-h-screen text-center md:max-w-4xl">
             <h5 className="text-9xl font-bold text-blue-light">404</h5>
             <h2 className="mt-8 text-4xl font-bold">
-                It seems like the URL that you requested from us doesn&apos;t exist.
+                您访问的页面不存在。
             </h2>
             <h1 className="mt-4 text-xl font-medium text-grey-light">
-                If you believe this was a mistake, reach out to us through our Discord,
-                or return to the homepage.
+                如果您认为这是一个错误，请通过我们的 Discord 联系我们，
+                或返回首页。
             </h1>
         </div>
 

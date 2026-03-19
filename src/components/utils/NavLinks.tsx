@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition, faQq} from '@fortawesome/free-brands-svg-icons';
 
 export type LinkProps = {
     name: string,
@@ -12,7 +12,7 @@ export type LinkProps = {
 };
 
 export const NavLink = ({ name, path, external, className, icon }: LinkProps) => (
-    <li className={`list-none transition w-full cursor-pointer hover:text-teal ${className}`}>
+    <li className={`list-none transition cursor-pointer hover:text-teal whitespace-nowrap ${className}`}>
         {
             external ? (
                 <a href={path} target="_blank" rel="noreferrer">
@@ -49,8 +49,8 @@ export const NavLinks = (props: { className?: string }) => {
     return (
         <span className={`flex flex-col gap-x-4 gap-y-2 md:items-center ${props.className}`}>
             {router.pathname !== '/' && <NavLink name="Home" path="/" />}
-            <NavLink name="Leaderboards" external path="https://hub.shutokorevivalproject.com" />
-            <NavLink name="Discord" external path="https://discord.gg/shutokorevivalproject" icon={faDiscord} />
+            <NavLink name="排行榜" external path="https://hub.shutokorevivalproject.com" />
+            <NavLink name="QQ群" external path="https://discord.gg/shutokorevivalproject" icon={faQq} />
         </span>
     );
 };

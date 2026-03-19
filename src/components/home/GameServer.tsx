@@ -17,7 +17,7 @@ const GameServer: React.FC<{ name: string, link: string, clients: number, maxCli
             <Button
                 className="float-right w-40 focus:outline-none transition rounded-full py-3 font-bold text-white hover:text-blue-light bg-green-500 hover:bg-green-700"
             >
-                Join
+                加入
             </Button>
         </a>
     </div>
