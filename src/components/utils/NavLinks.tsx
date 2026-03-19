@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition, faQq} from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition, faQq } from '@fortawesome/free-brands-svg-icons';
 
 export type LinkProps = {
     name: string,

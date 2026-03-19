@@ -64,10 +64,10 @@ export const Community = () => {
             .then((res : StatisticsResponse) => {
                 setPlayerCount(res.numPlayers);
                 setServerCount(res.numServers);
-                setServers({ 'China': chinaMockServers, ...res.servers });
+                setServers({ China: chinaMockServers, ...res.servers });
 
                 if (selectedRegion === '') {
-                    const allServers = { 'China': chinaMockServers, ...res.servers };
+                    const allServers = { China: chinaMockServers, ...res.servers };
                     setSelectedRegion(Object.keys(allServers)[0]);
                 }
             })
