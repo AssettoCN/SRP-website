@@ -36,7 +36,7 @@ export const Download = () => {
                         </div>
 
                         <p className="my-5 max-w-prose text-xl">
-                            需要安装帮助？请访问我们 Discord 服务器的 #help 频道。
+                            需要安装帮助？请访问我们 Discord 服务器的 #help 频道或进入QQ群寻求帮助。
                         </p>
 
                         <iframe

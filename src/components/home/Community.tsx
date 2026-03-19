@@ -1,7 +1,7 @@
 import { MouseEventHandler, useEffect, useState } from 'react';
-import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faDiscord, faQq } from '@fortawesome/free-brands-svg-icons';
 import { Card, CardBody, CardTitle } from '../utils/Card';
 import Container from '../utils/Container';
 import GameServer from './GameServer';
@@ -96,24 +96,42 @@ export const Community = () => {
                 <div className="my-8">
                     <Card bgColour="gray-100" className="border-discord shadow-lg">
                         <CardTitle>
-                            <span className="flex justify-center items-center p-2 mr-2 bg-discord rounded-xl">
-                                <Image src="/svg/discordLogo.svg" width={23} height={23} alt="Discord Logo" />
+                            <span className="flex justify-center items-center p-2 mr-2 bg-discord rounded-xl w-9 h-9">
+                                <FontAwesomeIcon icon={faDiscord} className="text-white w-5 h-5" />
                             </span>
                             Discord
+                            <span className="mx-2 text-gray-400">|</span>
+                            <span className="flex justify-center items-center p-2 mr-2 bg-[#12B7F5] rounded-xl w-9 h-9">
+                                <FontAwesomeIcon icon={faQq} className="text-white w-5 h-5" />
+                            </span>
+                            QQ群
                         </CardTitle>
                         <CardBody>
-                            我们的 Discord 服务器是您与我们交流、获取进度报告和参与活动的平台。遇到问题？社区随时为您提供帮助！
+                            加入我们的 Discord 或 QQ 群，获取进度报告、参与活动或寻求帮助。
                         </CardBody>
 
-                        <a
-                            className="self-center py-2 px-3 text-xl font-semibold text-white bg-discord hover:bg-discord-dark rounded-xl transition"
-                            href="https://discord.gg/shutokorevivalproject"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            加入社区&nbsp;
-                            <FontAwesomeIcon icon={faArrowRight} />
-                        </a>
+                        <div className="flex gap-3 self-center">
+                            <a
+                                className="py-2 px-3 text-xl font-semibold text-white bg-discord hover:bg-discord-dark rounded-xl transition"
+                                href="https://discord.gg/shutokorevivalproject"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <FontAwesomeIcon icon={faDiscord} className="mr-2" />
+                                Discord&nbsp;
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </a>
+                            <a
+                                className="py-2 px-3 text-xl font-semibold text-white bg-[#12B7F5] hover:bg-[#0EA1DA] rounded-xl transition"
+                                href="https://discord.gg/shutokorevivalproject"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <FontAwesomeIcon icon={faQq} className="mr-2" />
+                                QQ群&nbsp;
+                                <FontAwesomeIcon icon={faArrowRight} />
+                            </a>
+                        </div>
                     </Card>
                 </div>
             </Container>
@@ -122,7 +140,7 @@ export const Community = () => {
                     <span className="text-4xl text-blue-light">官方服务器</span>
 
                     <p className="mt-4 mb-6 max-w-prose">
-                        由SRP团队托管的服务器，专注于街头竞速。
+                        由SRP团队与AssettoCN托管的服务器，专注于街头竞速。
                     </p>
 
                     <div className="text-sm font-medium text-center text-gray-500 border-gray-200">

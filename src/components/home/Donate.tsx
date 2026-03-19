@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPatreon } from '@fortawesome/free-brands-svg-icons';
 import { Button } from '../utils/Button';
 import Container from '../utils/Container';
 
@@ -8,7 +10,7 @@ export const Donate = () => (
 
             <Container className="flex relative top-0 flex-col items-center py-12 max-w-7xl lg:items-start">
                 <div className="max-w-4xl text-center lg:text-left">
-                    <h1 className="text-teal">Patreon 赞助</h1>
+                    <h1 className="text-teal">支持我们</h1>
                     <p className="pt-4 pb-6">
                         资金贡献将用于服务器的扩展和维护开支。
                         <br />
@@ -16,12 +18,32 @@ export const Donate = () => (
                         以及协助开发团队维修、维护或升级硬件，以提升工作效率和稳定性。
                     </p>
                 </div>
-                <div className="flex flex-col items-center space-y-3 space-x-4 text-center md:space-y-0 lg:flex-row lg:items-start lg:text-left">
-                    <a href="https://www.patreon.com/Shutoko_Revival_Project" target="_blank" rel="noreferrer">
-                        <Button className="w-40 hover:text-teal-light-contrast bg-teal-light-contrast hover:bg-white border-2 border-teal-light-contrast">
-                            赞助
-                        </Button>
-                    </a>
+                <div className="flex flex-col items-center gap-6 text-center lg:flex-row lg:items-start lg:text-left">
+                    <div className="flex flex-col items-center lg:items-start">
+                        <div className="flex items-center gap-2 mb-3">
+                            <FontAwesomeIcon icon={faPatreon} className="text-3xl text-[#FF424D]" />
+                            <span className="text-2xl font-bold text-teal">Patreon</span>
+                        </div>
+                        <p className="text-sm text-gray-300 mb-3">面向海外用户</p>
+                        <a href="https://www.patreon.com/Shutoko_Revival_Project" target="_blank" rel="noreferrer">
+                            <Button className="w-40 hover:text-[#FF424D] bg-[#FF424D] hover:bg-white border-2 border-[#FF424D]">
+                                赞助
+                            </Button>
+                        </a>
+                    </div>
+                    <div className="w-px h-20 bg-gray-500 hidden lg:block" />
+                    <div className="flex flex-col items-center lg:items-start">
+                        <div className="flex items-center gap-2 mb-3">
+                            <span className="text-[#946CE6]"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M9 14.234a.567.567 0 1 0 0 1.134.567.567 0 0 0 0-1.134m5.351 1.705a.567.567 0 1 0 0 1.135.567.567 0 0 0 0-1.135m8.401 1.436c-.189.095-.461.1-.713.013-.169-.06-.352-.116-.534-.172-.339-.104-.904-.276-1.011-.407a.533.533 0 1 0-.853.643c.059.08.139.146.22.209-.816 1.131-4.398 3.382-9.464 2.273-2.283-.5-3.819-1.413-4.444-2.639-.451-.885-.348-1.797-.133-2.293.62-1.29 5.097-4.261 7.955-5.943a.537.537 0 0 0 .188-.733c-.149-.254-.49-.356-.73-.189-.231.135-1.015.601-2.015 1.236-.338-.227-.923-.508-1.86-.6-1.486-.148-4.92-.805-6.029-1.275C2.535 7.162.731 6.27 1.131 5.267c.092-.234.527-.613 1.47-.974a8.5 8.5 0 0 1 1.995-.492l-.212.103c-.642.312-1.343.662-1.813 1.075-.034-.022-.07-.044-.094-.069a.527.527 0 0 0-.754-.017.533.533 0 0 0-.017.756c.19.2.471.35.829.465l.039.014c1.245.383 3.458.336 6.578.211 1.345-.052 2.615-.102 3.674-.082 3.512.07 6.152 1.469 8.07 4.279 1.178 1.725.753 3.426.079 4.903a1.4 1.4 0 0 1-.231-.222.54.54 0 0 0-.75-.085.535.535 0 0 0-.086.751c.109.137.665.778 1.355.724l.037-.002c.021-.003.042.001.064-.003.472-.086.768-.063 1.045.111.367.232.547.37.511.485-.021.073-.076.125-.168.177M8.19 11.418l-.315.231a1.6 1.6 0 0 1-.243-.32c.123-.038.33.007.558.089m14.733 4.356a1.9 1.9 0 0 0-.81-.27c.632-1.544 1.034-3.565-.336-5.572-2.096-3.072-5.101-4.668-8.93-4.744-1.091-.022-2.377.029-3.737.083-1.58.063-3.683.145-5.112.027.285-.155.588-.304.851-.431 1.006-.49 1.797-.872 1.535-1.548-.137-.396-.547-.603-1.219-.618C3.748 2.669.688 3.489.138 4.872c-.31.779-.361 2.282 2.775 3.61 1.29.548 4.934 1.216 6.341 1.355.397.039.701.119.931.205a75 75 0 0 0-.986.664c-.577-.329-1.521-.718-2.226-.237a.94.94 0 0 0-.435.768c-.01.385.224.763.486 1.066-1.038.83-1.877 1.634-2.175 2.253-.332.762-.467 2.008.153 3.224.786 1.544 2.524 2.62 5.166 3.199 3.454.755 6.437.075 8.411-.966 1.099-.579 1.878-1.27 2.257-1.887l.356.113c.169.051.338.103.496.159.522.181 1.1.157 1.545-.068l.025-.013c.336-.177.577-.46.683-.803.285-.922-.528-1.432-1.018-1.74"/></svg></span>
+                            <span className="text-2xl font-bold text-teal">爱发电</span>
+                        </div>
+                        <p className="text-sm text-gray-300 mb-3">面向国内用户</p>
+                        <a href="https://afdian.com/" target="_blank" rel="noreferrer">
+                            <Button className="w-40 hover:text-[#946CE6] bg-[#946CE6] hover:bg-white border-2 border-[#946CE6]">
+                                赞助
+                            </Button>
+                        </a>
+                    </div>
                 </div>
             </Container>
         </div>
