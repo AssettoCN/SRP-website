@@ -39,7 +39,7 @@ export const Donate = () => (
                             <span className="text-2xl font-bold text-teal">爱发电</span>
                         </div>
                         <p className="text-sm text-gray-300 mb-3">面向国内用户</p>
-                        <a href="https://afdian.com/" target="_blank" rel="noreferrer">
+                        <a href="https://afdian.com/a/assettocn" target="_blank" rel="noreferrer">
                             <Button className="w-40 hover:text-[#946CE6] bg-[#946CE6] hover:bg-white border-2 border-[#946CE6]">
                                 赞助
                             </Button>
