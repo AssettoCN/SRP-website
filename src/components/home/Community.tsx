@@ -123,7 +123,7 @@ export const Community = () => {
                             </a>
                             <a
                                 className="py-2 px-3 text-xl font-semibold text-white bg-[#12B7F5] hover:bg-[#0EA1DA] rounded-xl transition"
-                                href="https://discord.gg/shutokorevivalproject"
+                                href="https://qm.qq.com/q/IAxQOpCGYM"
                                 target="_blank"
                                 rel="noreferrer"
                             >

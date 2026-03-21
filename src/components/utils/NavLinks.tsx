@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconDefinition, faQq } from '@fortawesome/free-brands-svg-icons';
+import { IconDefinition, faDiscord, faQq } from '@fortawesome/free-brands-svg-icons';
 
 export type LinkProps = {
     name: string,
@@ -50,7 +50,8 @@ export const NavLinks = (props: { className?: string }) => {
         <span className={`flex flex-col gap-x-4 gap-y-2 md:items-center ${props.className}`}>
             {router.pathname !== '/' && <NavLink name="Home" path="/" />}
             <NavLink name="排行榜" external path="https://hub.shutokorevivalproject.com" />
-            <NavLink name="QQ群" external path="https://discord.gg/shutokorevivalproject" icon={faQq} />
+            <NavLink name="Discord" external path="https://discord.gg/shutokorevivalproject" icon={faDiscord} />
+            <NavLink name="QQ群" external path="https://qm.qq.com/q/IAxQOpCGYM" icon={faQq} />
         </span>
     );
 };
