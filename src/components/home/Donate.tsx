@@ -4,6 +4,8 @@ import { faPatreon } from '@fortawesome/free-brands-svg-icons';
 import { Button } from '../utils/Button';
 import Container from '../utils/Container';
 
+const afdianFilter = 'brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(2000%) hue-rotate(222deg)';
+
 export const Donate = () => (
     <section className="bg-blue-darker">
         <div className="relative">
@@ -35,7 +37,7 @@ export const Donate = () => (
                     <div className="w-px h-20 bg-gray-500 hidden lg:block" />
                     <div className="flex flex-col items-center lg:items-start">
                         <div className="flex items-center gap-2 mb-3">
-                            <Image src="/svg/afdianLogo.svg" width={28} height={28} alt="爱发电" style={{ filter: 'brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(2000%) hue-rotate(222deg)' }} />
+                            <Image src="/svg/afdianLogo.svg" width={28} height={28} alt="爱发电" style={{ filter: afdianFilter }} />
                             <span className="text-2xl font-bold text-teal">爱发电</span>
                         </div>
                         <p className="text-sm text-gray-300 mb-3">面向国内用户</p>
