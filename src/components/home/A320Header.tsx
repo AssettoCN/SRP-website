@@ -7,7 +7,7 @@ export const A320Header = () => (
     <header>
         <video
             className="object-cover fixed -z-10 w-screen h-screen opacity-20"
-            src="https://files.shutokorevivalproject.com/srp-bg.mp4"
+            src="/video/srp-bg.mp4"
             playsInline
             autoPlay
             muted
